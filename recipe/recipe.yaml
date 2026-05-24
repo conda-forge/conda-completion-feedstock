@@ -11,14 +11,14 @@ source:
   sha256: 47987de34782335d6613fab7dc551debf74c82b8a246c35a4e95113825e3d9e0
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
       name: conda-completer
       version: ${{ version }}
     build:
-      number: 0
+      number: 1
       python:
          version_independent: true
       script:
@@ -59,7 +59,7 @@ outputs:
       name: conda-completion
       version: ${{ version }}
     build:
-      number: 0
+      number: 1
       noarch: python
       script:
         env:
