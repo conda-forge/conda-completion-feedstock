@@ -51,9 +51,6 @@ outputs:
           imports:
             - conda_completer
           pip_check: false
-          python_version:
-            - ${{ python_min }}.*
-            - "*"
       - package_contents:
           files:
             - python-scripts/_conda_completer*
@@ -92,9 +89,6 @@ outputs:
             - conda_completion
             - conda_completion.plugin
           pip_check: false
-          python_version:
-            - ${{ python_min }}.*
-            - "*"
 
 about:
   homepage: https://github.com/conda-incubator/conda-completion
