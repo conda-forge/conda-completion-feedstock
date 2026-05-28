@@ -11,14 +11,14 @@ source:
   sha256: f0578cc3f82ab6bd648e473e48847acc4e6c80055d83cfc9ebd041678beb2431
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
       name: conda-completer
       version: ${{ version }}
     build:
-      number: 1
+      number: 0
       python:
          version_independent: true
       script:
@@ -59,7 +59,7 @@ outputs:
       name: conda-completion
       version: ${{ version }}
     build:
-      number: 1
+      number: 0
       noarch: python
       script:
         env:
@@ -81,8 +81,7 @@ outputs:
         - conda >=25.1
         - conda-completer ==${{ version }}
         - platformdirs >=4.0
-        - tomli >=2.0
-        - tomli-w >=1.0
+        - msgpack-python >=1.0
     tests:
       - python:
           imports:
