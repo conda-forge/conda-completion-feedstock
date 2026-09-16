@@ -1,5 +1,5 @@
 context:
-  version: "0.3.0"
+  version: "0.3.2"
 
 recipe:
   name: conda-completion-split
@@ -7,7 +7,7 @@ recipe:
 
 source:
   url: https://github.com/conda-incubator/conda-completion/archive/refs/tags/${{ version }}.tar.gz
-  sha256: 757e434d199634c7312d219195ad074225b49e09c0b4dac94b54f032f47824b1
+  sha256: 4456f534b5ed679591e5b91a80f39e615c3b2c82f05d7e68eb9c2f6dc06319a0
 
 build:
   number: 0
@@ -19,7 +19,7 @@ outputs:
     build:
       number: 0
       python:
-         version_independent: true
+        version_independent: true
       script:
         env:
           CARGO_PROFILE_RELEASE_STRIP: symbols
@@ -50,6 +50,9 @@ outputs:
           imports:
             - conda_completer
           pip_check: false
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
       - package_contents:
           files:
             - python-scripts/_conda_completer*
@@ -91,7 +94,9 @@ outputs:
             - conda_completion
             - conda_completion.plugin
           pip_check: false
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
 
 about:
   homepage: https://github.com/conda-incubator/conda-completion
